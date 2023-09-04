@@ -1,5 +1,4 @@
-# Docker
-commands used to create containers on docker
+# Docker commands
 <hr>
 **Commands:**
 - curl -sL https://github.com/ShubhamTatvamasi/docker-install/raw/master/docker-install.sh | bash
