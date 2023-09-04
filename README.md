@@ -1,5 +1,6 @@
 # Docker
 commands used to create containers on docker
+<hr>
 **Commands:**
 - curl -sL https://github.com/ShubhamTatvamasi/docker-install/raw/master/docker-install.sh | bash
 - sudo apt update
