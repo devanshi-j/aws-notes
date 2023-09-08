@@ -20,10 +20,10 @@ docker ps
 ```
 ### Port Forwarding:
 ```
-docker run -d -p 80:80 --name httpd-apache httpd
+docker run --name mynginx -p 80:80 -d nginx
+docker run --name hello-world -p 80:80 -d hello-world
 ```
 ```
-docker run -d -p 80:80 --name httpd-nginx httpd
 ```
 ### Stop Container:
 ```
