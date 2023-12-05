@@ -27,4 +27,11 @@ Cloud Secvives Model:
 3.Lambda Servives: Serverless
 
 *Storage Services
+1.S3: Simple storage service
+2.EBS: Block storage
+3.EFS: Object Storage
+4.Glacier: Archival service
+
+* Diff btw block storage and object storage
+  
 
