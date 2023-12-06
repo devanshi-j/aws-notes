@@ -34,4 +34,7 @@ Cloud Secvives Model:
 
 * Diff btw block storage and object storage
   
-
+NETWORK SERVICES
+1. VPC: Virtual Private Cloud
+2. DNS: Route53
+3. Direct Connect
