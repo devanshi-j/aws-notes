@@ -235,4 +235,531 @@ Security
 Status
 Docs
 Contact
+Skip to content
+Sign up
+KRIISHSHARMA
+/
+AWS
+Public
+ 0 stars  1 fork  Activity
+Code
+Issues
+Pull requests
+KRIISHSHARMA/AWS
+Latest commit
+@KRIISHSHARMA
+KRIISHSHARMA
+…
+last week
+Git stats
+Files
+README.md
+What is cloud computing
+cloud computing is the delivery of computing services including servers,storage,databases,networking,software etc.
+benfits
+faster time to market
+scalability and flexibility
+cost savings
+better collaboration
+advanced security
+data loss prevention
+disadvantage
+risk of vendor lock-in
+less control over underlying cloud insfra
+concerns about security risks like data privacy and online threats
+integration complexity with exisiting systems
+unforseen costs and unexpected expenses
+Screenshot from 2023-11-26 11-13-28
+
+Screenshot from 2023-11-26 11-14-43
+
+example of private implementation softwares : openstack , opennebula
+Hyperscalars : A hyperscaler is a type of large-scale data center that offers massive computing resources, typically in the form of an elastic cloud platform. Organizations use them to deploy and manage large-scale applications and services.
+Screenshot from 2023-11-26 11-17-36
+
+Screenshot from 2023-11-26 11-19-52
+
+Compute services
+EC2
+ECS/EKS : containerized services `
+Fargate
+lambda : serverless
+Storage Services
+S3
+EBS : Amazon Elastic Block Storage is a storage service wherein each block of storage acts like a separate hard drive (volume) .
+EFS : dont need to assign any volume , can do on its own , seamless storage , database on EC2 instances
+Archival service - Glacier : Amazon Glacier is extremely low cost, secure, and durable storage service for data archiving and backup. That data stored which are not needed instantly , eg old data . Takes time min 4 hours or 1 day to retrieve request ( S3 instantly returns request)
+Network Services
+VPC : own insolated environment in a public cloud
+Domain Name Service - Route 53
+Screenshot from 2023-11-26 17-59-50
+
+public subnet : can receive traffic from outerworld
+private subnet : cannot receive traffic from outerworld but may or may not send traffic to outerworld
+Screenshot from 2023-11-26 18-03-33 Screenshot from 2023-11-26 18-05-39
+
+Screenshot from 2023-11-26 13-40-57 Screenshot from 2023-11-26 13-46-08 Screenshot from 2023-11-26 13-47-33 Screenshot from 2023-11-26 13-57-52 Screenshot from 2023-11-26 13-59-20
+
+Apache web server works on layer 7 , using single apache server one can deploy multiple applications on different ports based on paths (URLbased) (virtual hosts) . virtual hosting can only work on layer 7
+Application based LB
+key pair : kind of like a password (public key is username; private key is password)
+
+PPK (PuTTY Private Key) and PEM (Privacy Enhanced Mail) are two file formats that are commonly used for SSH and SSL/TLS connections. While PPK files are primarily used with PuTTY on Windows, PEM files are more widely supported and can be used with various tools and platforms
+security groups : A security group controls the traffic that is allowed to reach and leave the resources that it is associated with. For example, after you associate a security group with an EC2 instance, it controls the inbound and outbound traffic for the instance. When you create a VPC, it comes with a default security group. (acts as a firewall)
+
+Screenshot from 2023-11-26 15-39-41 Screenshot from 2023-11-26 15-39-41 Screenshot from 2023-11-26 15-40-34 Screenshot from 2023-11-26 15-40-51
+
+Creating a target group
+Your load balancer routes requests to the targets in a target group and performs health checks on the targets.
+LB routes traffic to target group then traffic group routes traffic to the back end ec2 instances or IP addresses etc
+Screenshot from 2023-11-26 15-49-16 Screenshot from 2023-11-26 15-49-16 Screenshot from 2023-11-26 15-50-48
+
+Screenshot from 2023-11-26 16-19-25 Screenshot from 2023-11-26 16-24-54
+
+Autoscalling
+Screenshot from 2023-11-26 16-44-57
+
+Creating launch template
+Screenshot from 2023-11-26 16-59-20 Screenshot from 2023-11-26 17-01-18 Screenshot from 2023-11-26 17-17-33 Screenshot from 2023-11-26 17-19-34
+
+Screenshot from 2023-11-26 17-05-17 Screenshot from 2023-11-26 17-08-50 Screenshot from 2023-11-26 17-11-22 Uploading Screenshot from 2023-11-26 17-22-51.png…
+
+Creating scalling policies
+Screenshot from 2023-11-26 17-34-29 Screenshot from 2023-11-26 17-35-23
+
+Artificial load
+htop
+Screenshot from 2023-11-26 17-39-48
+
+currently 0
+
+making instance count to a high number
+
+seq 999999999999999999999 > /dev/null &
+Screenshot from 2023-11-26 17-43-25
+
+Screenshot from 2023-11-26 17-58-10 Screenshot from 2023-11-26 17-58-29 Screenshot from 2023-11-26 18-11-32
+
+going to the DNS name and reloading will take you to diff targets(3)
+this is round robin at work
+AWS CLI : The AWS Command Line Interface (AWS CLI) is a unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts.
+BOTO library in python
+Screenshot from 2023-11-27 16-45-38 Screenshot from 2023-11-27 16-47-42
+
+sudo snap install aws-cli
+aws configure
+Screenshot from 2023-11-27 17-08-27
+
+in security credentials , before creating access key copy and paste PU , PrK and fill location and format in terminal
+give user access
+Screenshot from 2023-11-27 17-30-18
+
+Screenshot from 2023-11-27 17-31-17 Screenshot from 2023-11-27 17-31-32
+
+after creating instance
+aws ec2 describe-instances
+Screenshot from 2023-11-27 17-35-01 Screenshot from 2023-11-27 17-35-01 Screenshot from 2023-11-27 17-46-10 Screenshot from 2023-11-27 18-12-04 Screenshot from 2023-11-27 18-12-32 Screenshot from 2023-11-27 18-14-02 Screenshot from 2023-11-27 18-17-35 Screenshot from 2023-11-27 18-26-06
+
+docker image to create art load
+pods : Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. A Pod (as in a pod of whales or pea pod) is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.
+download
+
+daemon sets : works on nodes where pods are running , can manage all your agents eg if we are runninf 5 ec2 instances behind the k8s cluster then we can run 1 daemon set and that daemon set wil take care of all the agents
+CLOUD 9
+cloud based IDE (vscode , pycharm etc)
+provides IDE on browsers
+Screenshot from 2023-12-02 16-01-33 Screenshot from 2023-12-02 16-12-26 Screenshot from 2023-12-02 16-12-51
+
+after confiugring aws cli on cloud 9 (scroll up)
+configure EKS ctl and kubectl link for installation
+Screenshot from 2023-12-02 16-35-44 Screenshot from 2023-12-02 16-55-57 Screenshot from 2023-12-02 16-56-13 Screenshot from 2023-12-02 16-57-22
+
+launching a cluster
+
+eksctl create cluster --name test --version 1.28 --nodegroup-name ng.default --node-type t3.micro --nodes 2 --managed
+Screenshot from 2023-12-02 17-05-19
+
+yaml file for nginx container launched with official nginx image
+
+   apiVersion: apps/v1
+kind: Deployment
+metadata:
+    labels:
+        environment: test
+    name: test
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+             environment: test
+    template:
+        metadata:
+            labels:
+                environment: test
+        spec:
+            containers:
+            - image: nginx:1.16
+              name: nginx
+  nano nginx-deployment.yaml
+kubectl is the thing using which we will be creating , launching the resources , creating pods , troubleshooting cluster using kubectl
+we will apply this file using kubectl
+  kubectl apply -f nginx-deployment.yaml
+Screenshot from 2023-12-02 17-51-03
+
+to see pods used by kubectl Screenshot from 2023-12-02 17-58-35
+
+autoscaler used by eks Screenshot from 2023-12-02 18-00-51
+
+can scale it Screenshot from 2023-12-02 18-03-17
+
+install matrix server , will continue to moniter the cpu matrix ,without this will not show how much resources are utilised
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+creating php-apache autoscaling yaml file for horizontal pod autoscaling
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+spec:
+  selector:
+    matchLabels:
+      run: php-apache
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: registry.k8s.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    run: php-apache
+spec:
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
+---
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: php-apache
+  namespace: default
+spec:
+  scaleTargetRef:
+     apiVersion: apps/v1
+     kind: Deployment
+     name: php-apache
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+nano hpa.yaml
+deploying
+kubectl apply -f hpa.yaml
+Screenshot from 2023-12-02 18-46-22 Screenshot from 2023-12-02 19-07-14
+
+artificial load
+
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+creating a load balancer type service Screenshot from 2023-12-02 19-20-07
+
+https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/
+
+creating nodeport service Screenshot from 2023-12-02 19-26-13 Screenshot from 2023-12-02 19-34-42
+
+Screenshot from 2023-12-02 19-33-13
+
+EKS
+Screenshot from 2023-12-02 16-04-58 Screenshot from 2023-12-02 16-08-06
+
+Releases
+No releases published
+Packages
+No packages published
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact
+
+Skip to content
+Sign up
+KRIISHSHARMA
+/
+AWS
+Public
+ 0 stars  1 fork  Activity
+Code
+Issues
+Pull requests
+KRIISHSHARMA/AWS
+Latest commit
+@KRIISHSHARMA
+KRIISHSHARMA
+…
+last week
+Git stats
+Files
+README.md
+What is cloud computing
+cloud computing is the delivery of computing services including servers,storage,databases,networking,software etc.
+benfits
+faster time to market
+scalability and flexibility
+cost savings
+better collaboration
+advanced security
+data loss prevention
+disadvantage
+risk of vendor lock-in
+less control over underlying cloud insfra
+concerns about security risks like data privacy and online threats
+integration complexity with exisiting systems
+unforseen costs and unexpected expenses
+Screenshot from 2023-11-26 11-13-28
+
+Screenshot from 2023-11-26 11-14-43
+
+example of private implementation softwares : openstack , opennebula
+Hyperscalars : A hyperscaler is a type of large-scale data center that offers massive computing resources, typically in the form of an elastic cloud platform. Organizations use them to deploy and manage large-scale applications and services.
+Screenshot from 2023-11-26 11-17-36
+
+Screenshot from 2023-11-26 11-19-52
+
+Compute services
+EC2
+ECS/EKS : containerized services `
+Fargate
+lambda : serverless
+Storage Services
+S3
+EBS : Amazon Elastic Block Storage is a storage service wherein each block of storage acts like a separate hard drive (volume) .
+EFS : dont need to assign any volume , can do on its own , seamless storage , database on EC2 instances
+Archival service - Glacier : Amazon Glacier is extremely low cost, secure, and durable storage service for data archiving and backup. That data stored which are not needed instantly , eg old data . Takes time min 4 hours or 1 day to retrieve request ( S3 instantly returns request)
+Network Services
+VPC : own insolated environment in a public cloud
+Domain Name Service - Route 53
+Screenshot from 2023-11-26 17-59-50
+
+public subnet : can receive traffic from outerworld
+private subnet : cannot receive traffic from outerworld but may or may not send traffic to outerworld
+Screenshot from 2023-11-26 18-03-33 Screenshot from 2023-11-26 18-05-39
+
+Screenshot from 2023-11-26 13-40-57 Screenshot from 2023-11-26 13-46-08 Screenshot from 2023-11-26 13-47-33 Screenshot from 2023-11-26 13-57-52 Screenshot from 2023-11-26 13-59-20
+
+Apache web server works on layer 7 , using single apache server one can deploy multiple applications on different ports based on paths (URLbased) (virtual hosts) . virtual hosting can only work on layer 7
+Application based LB
+key pair : kind of like a password (public key is username; private key is password)
+
+PPK (PuTTY Private Key) and PEM (Privacy Enhanced Mail) are two file formats that are commonly used for SSH and SSL/TLS connections. While PPK files are primarily used with PuTTY on Windows, PEM files are more widely supported and can be used with various tools and platforms
+security groups : A security group controls the traffic that is allowed to reach and leave the resources that it is associated with. For example, after you associate a security group with an EC2 instance, it controls the inbound and outbound traffic for the instance. When you create a VPC, it comes with a default security group. (acts as a firewall)
+
+Screenshot from 2023-11-26 15-39-41 Screenshot from 2023-11-26 15-39-41 Screenshot from 2023-11-26 15-40-34 Screenshot from 2023-11-26 15-40-51
+
+Creating a target group
+Your load balancer routes requests to the targets in a target group and performs health checks on the targets.
+LB routes traffic to target group then traffic group routes traffic to the back end ec2 instances or IP addresses etc
+Screenshot from 2023-11-26 15-49-16 Screenshot from 2023-11-26 15-49-16 Screenshot from 2023-11-26 15-50-48
+
+Screenshot from 2023-11-26 16-19-25 Screenshot from 2023-11-26 16-24-54
+
+Autoscalling
+Screenshot from 2023-11-26 16-44-57
+
+Creating launch template
+Screenshot from 2023-11-26 16-59-20 Screenshot from 2023-11-26 17-01-18 Screenshot from 2023-11-26 17-17-33 Screenshot from 2023-11-26 17-19-34
+
+Screenshot from 2023-11-26 17-05-17 Screenshot from 2023-11-26 17-08-50 Screenshot from 2023-11-26 17-11-22 Uploading Screenshot from 2023-11-26 17-22-51.png…
+
+Creating scalling policies
+Screenshot from 2023-11-26 17-34-29 Screenshot from 2023-11-26 17-35-23
+
+Artificial load
+htop
+Screenshot from 2023-11-26 17-39-48
+
+currently 0
+
+making instance count to a high number
+
+seq 999999999999999999999 > /dev/null &
+Screenshot from 2023-11-26 17-43-25
+
+Screenshot from 2023-11-26 17-58-10 Screenshot from 2023-11-26 17-58-29 Screenshot from 2023-11-26 18-11-32
+
+going to the DNS name and reloading will take you to diff targets(3)
+this is round robin at work
+AWS CLI : The AWS Command Line Interface (AWS CLI) is a unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts.
+BOTO library in python
+Screenshot from 2023-11-27 16-45-38 Screenshot from 2023-11-27 16-47-42
+
+sudo snap install aws-cli
+aws configure
+Screenshot from 2023-11-27 17-08-27
+
+in security credentials , before creating access key copy and paste PU , PrK and fill location and format in terminal
+give user access
+Screenshot from 2023-11-27 17-30-18
+
+Screenshot from 2023-11-27 17-31-17 Screenshot from 2023-11-27 17-31-32
+
+after creating instance
+aws ec2 describe-instances
+Screenshot from 2023-11-27 17-35-01 Screenshot from 2023-11-27 17-35-01 Screenshot from 2023-11-27 17-46-10 Screenshot from 2023-11-27 18-12-04 Screenshot from 2023-11-27 18-12-32 Screenshot from 2023-11-27 18-14-02 Screenshot from 2023-11-27 18-17-35 Screenshot from 2023-11-27 18-26-06
+
+docker image to create art load
+pods : Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. A Pod (as in a pod of whales or pea pod) is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.
+download
+
+daemon sets : works on nodes where pods are running , can manage all your agents eg if we are runninf 5 ec2 instances behind the k8s cluster then we can run 1 daemon set and that daemon set wil take care of all the agents
+CLOUD 9
+cloud based IDE (vscode , pycharm etc)
+provides IDE on browsers
+Screenshot from 2023-12-02 16-01-33 Screenshot from 2023-12-02 16-12-26 Screenshot from 2023-12-02 16-12-51
+
+after confiugring aws cli on cloud 9 (scroll up)
+configure EKS ctl and kubectl link for installation
+Screenshot from 2023-12-02 16-35-44 Screenshot from 2023-12-02 16-55-57 Screenshot from 2023-12-02 16-56-13 Screenshot from 2023-12-02 16-57-22
+
+launching a cluster
+
+eksctl create cluster --name test --version 1.28 --nodegroup-name ng.default --node-type t3.micro --nodes 2 --managed
+Screenshot from 2023-12-02 17-05-19
+
+yaml file for nginx container launched with official nginx image
+
+   apiVersion: apps/v1
+kind: Deployment
+metadata:
+    labels:
+        environment: test
+    name: test
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+             environment: test
+    template:
+        metadata:
+            labels:
+                environment: test
+        spec:
+            containers:
+            - image: nginx:1.16
+              name: nginx
+  nano nginx-deployment.yaml
+kubectl is the thing using which we will be creating , launching the resources , creating pods , troubleshooting cluster using kubectl
+we will apply this file using kubectl
+  kubectl apply -f nginx-deployment.yaml
+Screenshot from 2023-12-02 17-51-03
+
+to see pods used by kubectl Screenshot from 2023-12-02 17-58-35
+
+autoscaler used by eks Screenshot from 2023-12-02 18-00-51
+
+can scale it Screenshot from 2023-12-02 18-03-17
+
+install matrix server , will continue to moniter the cpu matrix ,without this will not show how much resources are utilised
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+creating php-apache autoscaling yaml file for horizontal pod autoscaling
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+spec:
+  selector:
+    matchLabels:
+      run: php-apache
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: registry.k8s.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    run: php-apache
+spec:
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
+---
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: php-apache
+  namespace: default
+spec:
+  scaleTargetRef:
+     apiVersion: apps/v1
+     kind: Deployment
+     name: php-apache
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+nano hpa.yaml
+deploying
+kubectl apply -f hpa.yaml
+Screenshot from 2023-12-02 18-46-22 Screenshot from 2023-12-02 19-07-14
+
+artificial load
+
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+creating a load balancer type service Screenshot from 2023-12-02 19-20-07
+
+https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/
+
+creating nodeport service Screenshot from 2023-12-02 19-26-13 Screenshot from 2023-12-02 19-34-42
+
+Screenshot from 2023-12-02 19-33-13
+
+EKS
+Screenshot from 2023-12-02 16-04-58 Screenshot from 2023-12-02 16-08-06
+
+Releases
+No releases published
+Packages
+No packages published
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact
 Manage cookiesDo not share my personal information
